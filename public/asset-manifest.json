@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e517e397.chunk.css",
+    "main.js": "/static/js/main.f55f338e.chunk.js",
+    "main.js.map": "/static/js/main.f55f338e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8dd257bb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8dd257bb.js.map",
+    "static/css/2.d7d82697.chunk.css": "/static/css/2.d7d82697.chunk.css",
+    "static/js/2.f5930a25.chunk.js": "/static/js/2.f5930a25.chunk.js",
+    "static/js/2.f5930a25.chunk.js.map": "/static/js/2.f5930a25.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b8de1ed5224c04112ebc6f758d5eac43.js": "/precache-manifest.b8de1ed5224c04112ebc6f758d5eac43.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.d7d82697.chunk.css.map": "/static/css/2.d7d82697.chunk.css.map",
+    "static/css/main.e517e397.chunk.css.map": "/static/css/main.e517e397.chunk.css.map",
+    "static/js/2.f5930a25.chunk.js.LICENSE.txt": "/static/js/2.f5930a25.chunk.js.LICENSE.txt",
+    "static/media/add-note.svg": "/static/media/add-note.91ab0319.svg",
+    "static/media/aid-logo.png": "/static/media/aid-logo.5a8d09f3.png",
+    "static/media/arrow.svg": "/static/media/arrow.15b12873.svg",
+    "static/media/mdb.css": "/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/avatarLoader.gif": "/static/media/avatarLoader.2c9b45c9.gif",
+    "static/media/cross.svg": "/static/media/cross.21df9a01.svg",
+    "static/media/delete-user.svg": "/static/media/delete-user.9760c031.svg",
+    "static/media/all.min.css": "/static/media/fa-solid-900.ec763292.svg",
+    "static/media/friends.svg": "/static/media/friends.e8f88cde.svg",
+    "static/media/loading.svg": "/static/media/loading.a4b15b02.svg",
+    "static/media/ok.svg": "/static/media/ok.251fc800.svg",
+    "static/media/plus.svg": "/static/media/plus.867418af.svg",
+    "static/media/save.svg": "/static/media/save.d5a09bc5.svg",
+    "static/media/sp-tune.mp3": "/static/media/sp-tune.a3eeb710.mp3",
+    "static/media/upload.svg": "/static/media/upload.926d5c39.svg",
+    "static/media/x-mark.svg": "/static/media/x-mark.002e9675.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8dd257bb.js",
+    "static/css/2.d7d82697.chunk.css",
+    "static/js/2.f5930a25.chunk.js",
+    "static/css/main.e517e397.chunk.css",
+    "static/js/main.f55f338e.chunk.js"
+  ]
+}
