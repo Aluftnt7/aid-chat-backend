@@ -58,6 +58,11 @@ app.use("/api/room", roomRoutes);
 app.use("/api/note", noteRoutes);
 connectSockets(io);
 
+//Fallback route
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
+
 const logger = require("./services/LoggerService");
 // const { WebPushError } = require("web-push");
 const port = process.env.PORT || 3030;
