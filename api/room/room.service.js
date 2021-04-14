@@ -26,6 +26,7 @@ async function query(filterBy = {}) {
 }
 
 async function getById(filterBy) {
+  console.log("filterBy", filterBy);
   const collection = await dbService.getCollection("room");
   try {
     const room = await collection.findOne({ _id: ObjectId(filterBy.roomId) });
@@ -39,7 +40,7 @@ async function getById(filterBy) {
               return note.data.name.toLowerCase().includes(term);
             case "NoteTodo":
               return note.data.some((todo) =>
-                todo.text.toLowerCase().includes(term),
+                todo.text.toLowerCase().includes(term)
               );
             default:
               return note.data.toLowerCase().includes(term);
@@ -67,6 +68,7 @@ async function remove(roomId) {
 }
 
 async function update(room) {
+  console.log("room", room);
   const collection = await dbService.getCollection("room");
   room._id = ObjectId(room._id);
   try {
@@ -79,15 +81,15 @@ async function update(room) {
 }
 
 async function add(room) {
-    room.createdAt = Date.now();
-    const collection = await dbService.getCollection("room");
-    try {
-        await collection.insertOne(room);
-        return room;
-    } catch (err) {
-        console.log(`ERROR: cannot insert room`);
-        throw err;
-    }
+  room.createdAt = Date.now();
+  const collection = await dbService.getCollection("room");
+  try {
+    await collection.insertOne(room);
+    return room;
+  } catch (err) {
+    console.log(`ERROR: cannot insert room`);
+    throw err;
+  }
 }
 
 async function checkIsValidUser(userId, roomId) {

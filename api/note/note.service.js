@@ -4,15 +4,17 @@ const UtilService = require("../../services/UtilService");
 
 async function addNote(userId, roomId, note) {
   const user = await userService.getById(userId);
-  const room = await roomService.getById({ roomId })
-  note._id = UtilService.makeId(8)
-  note.createdAt = Date.now()
-  let { _id, imgUrl } = user
-  note.createdBy = { _id, imgUrl }
-  let idx = room.notes.findIndex(currNote => !currNote.isPinned);
-  (idx === -1) ? room.notes.push(note) : room.notes.splice(idx, 0, note)
+  const room = await roomService.getById({ roomId });
+  note._id = UtilService.makeId(8);
+  note.createdAt = Date.now();
+  let { _id, imgUrl } = user;
+  note.createdBy = { _id, imgUrl };
+  let idx = room.notes.findIndex((currNote) => !currNote.isPinned); //searching where the first unpinned note is
+  // idx === -1 ? room.notes.push(note) : room.notes.splice(idx, 0, note);
+  idx === -1 ? room.notes.push(note) : room.notes.push(note);
+  console.log("roommmmm", room);
   await roomService.update(room);
-  return note
+  return note;
 }
 
 async function removeNote(roomId, noteId) {
@@ -20,9 +22,8 @@ async function removeNote(roomId, noteId) {
   const idx = room.notes.findIndex((note) => note._id === noteId);
   room.notes.splice(idx, 1);
   const updatedRoom = await roomService.update(room);
-  _removeNoteFromStarred(updatedRoom, noteId)
+  _removeNoteFromStarred(updatedRoom, noteId);
 }
-
 
 async function changeNoteColor(roomId, noteId, color) {
   const room = await roomService.getById({ roomId });
@@ -32,18 +33,17 @@ async function changeNoteColor(roomId, noteId, color) {
   return room.notes[idx];
 }
 
-
-
 async function toggleNotePin(roomId, noteId) {
   let room = await roomService.getById({ roomId });
   const idx = room.notes.findIndex((note) => note._id === noteId);
   const note = room.notes.splice(idx, 1)[0]; //splice defalt behavior returns array
   note.isPinned = !note.isPinned;
-  room = note.isPinned ? _handleNotePin(room, note) : _handleNoteUnpin(room, note);
+  room = note.isPinned
+    ? _handleNotePin(room, note)
+    : _handleNoteUnpin(room, note);
   await roomService.update(room);
   return note;
 }
-
 
 async function updateNote(roomId, note) {
   const room = await roomService.getById({ roomId });
@@ -72,9 +72,15 @@ async function getStarredNotes(starredNotesPointers) {
 async function toggleStarredNote(userId, roomId, noteId) {
   try {
     const user = await userService.getById(userId);
-    let idx = user.starredNotes.findIndex(currNote => noteId === currNote.noteId);
-    (idx === -1) ? user.starredNotes.unshift({ roomId, noteId }) : user.starredNotes.splice(idx, 1);
-    let updatedUser = await userService.update(JSON.parse(JSON.stringify(user)),);
+    let idx = user.starredNotes.findIndex(
+      (currNote) => noteId === currNote.noteId
+    );
+    idx === -1
+      ? user.starredNotes.unshift({ roomId, noteId })
+      : user.starredNotes.splice(idx, 1);
+    let updatedUser = await userService.update(
+      JSON.parse(JSON.stringify(user))
+    );
     return updatedUser;
   } catch (err) {
     console.log(`Something went wrong ${userId}`);
@@ -87,7 +93,7 @@ async function _removeNoteFromStarred(room, noteId) {
   members.forEach(async (memberId) => {
     let member = await userService.getById(memberId);
     member.starredNotes = member.starredNotes.filter(
-      (starredNote) => starredNote.noteId !== noteId,
+      (starredNote) => starredNote.noteId !== noteId
     );
     userService.update(JSON.parse(JSON.stringify(member)));
   });
@@ -100,7 +106,7 @@ function _handleNotePin(room, note) {
 
 function _handleNoteUnpin(room, note) {
   let idx = room.notes.findIndex(
-    (currNote) => !currNote.isPinned && currNote.createdAt <= note.createdAt,
+    (currNote) => !currNote.isPinned && currNote.createdAt <= note.createdAt
   );
   idx === -1 ? room.notes.push(note) : room.notes.splice(idx, 0, note);
   return room;
