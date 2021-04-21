@@ -42,10 +42,8 @@ async function getById(userId) {
 }
 async function getByUsername(userName) {
   const collection = await dbService.getCollection("user");
-
   try {
     const user = await collection.findOne({ userName });
-
     return user;
   } catch (err) {
     console.log(`ERROR: while finding user ${userName}`);
@@ -92,7 +90,7 @@ async function updateImgAtContacts(userId, imgUrl) {
     user.friends.forEach(async (userFriend) => {
       let currFriend = await getById(userFriend._id);
       const userToUpdate = currFriend.friends.find(
-        (friend) => friend._id === userId,
+        (friend) => friend._id === userId
       );
       userToUpdate.imgUrl = imgUrl;
       update(currFriend);
