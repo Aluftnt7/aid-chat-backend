@@ -5764,3 +5764,10 @@ Wed, 21 Apr 2021 08:13:52 GMT - Debug - auth.service - login with username: test
 Wed, 21 Apr 2021 08:14:04 GMT - Debug - auth.service - login with username: test2
 Wed, 21 Apr 2021 08:15:22 GMT - Info - Server is running on port: 3030
 Wed, 21 Apr 2021 08:15:24 GMT - Info - Server is running on port: 3030
+Wed, 21 Apr 2021 08:31:33 GMT - Debug - auth.service - login with username: itadmin
+Wed, 21 Apr 2021 08:31:35 GMT - Debug - auth.service - login with username: itadmin
+Wed, 21 Apr 2021 08:32:20 GMT - Debug - auth.service - login with username: test2
+Wed, 21 Apr 2021 09:22:41 GMT - Debug - auth.service - login with username: test2
+Wed, 21 Apr 2021 09:27:51 GMT - Info - Server is running on port: 3030
+Wed, 21 Apr 2021 09:30:46 GMT - Info - Server is running on port: 3030
+Wed, 21 Apr 2021 09:30:49 GMT - Info - Server is running on port: 3030

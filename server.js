@@ -16,7 +16,14 @@ const app = express();
 //   privateVapidKey
 // );
 const http = require("http").createServer(app);
-const io = require("socket.io")(http);
+// const io = require("socket.io")(http);
+
+const io = require("socket.io")(http, {
+  cors: {
+    origin: process.env.PORT || 3030,
+    methods: ["GET", "POST"],
+  },
+});
 
 const authRoutes = require("./api/auth/auth.routes");
 const userRoutes = require("./api/user/user.routes");
