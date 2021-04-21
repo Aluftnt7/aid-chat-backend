@@ -26,6 +26,7 @@ async function query(filterBy = {}) {
 }
 
 async function getById(filterBy) {
+  if (!Object.keys(filterBy).length) return;
   console.log("filterBy", filterBy);
   const collection = await dbService.getCollection("room");
   try {
