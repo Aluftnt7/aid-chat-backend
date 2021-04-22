@@ -21,7 +21,7 @@ const router = express.Router();
 router.get("/", getUsers);
 router.get("/:id", getUser);
 router.put("/:id/update", updateImgAtContacts);
-router.put("/updateuser/:id", updateUser);
+router.put("/:id", updateUser);
 // router.put('/:id',  requireAuth, updateUser)
 // router.delete('/:id', deleteUser)
 router.delete("/:id", deleteUser);
