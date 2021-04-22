@@ -5820,3 +5820,9 @@ Thu, 22 Apr 2021 17:01:09 GMT - Info - Server is running on port: 3030
 Thu, 22 Apr 2021 17:01:27 GMT - Info - Server is running on port: 3030
 Thu, 22 Apr 2021 17:02:52 GMT - Info - Server is running on port: 3030
 Thu, 22 Apr 2021 17:02:56 GMT - Info - Server is running on port: 3030
+Thu, 22 Apr 2021 17:09:36 GMT - Debug - auth.service - login with username: roy
+Thu, 22 Apr 2021 17:10:03 GMT - Info - Server is running on port: 3030
+Thu, 22 Apr 2021 17:10:53 GMT - Debug - auth.service - login with username: roy
+Thu, 22 Apr 2021 17:11:22 GMT - Debug - auth.service - login with username: shay
+Thu, 22 Apr 2021 17:37:28 GMT - Debug - auth.service - login with username: shay
+Thu, 22 Apr 2021 17:38:48 GMT - Debug - auth.service - login with username: shay

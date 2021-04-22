@@ -17,9 +17,8 @@ async function deleteUser(req, res) {
 
 async function updateUser(req, res) {
   const user = req.body;
-  debugger;
+  console.log(user);
   const updatedUser = await userService.update(user);
-  debugger;
   res.cookie("user", updatedUser);
   res.send(updatedUser);
 }
